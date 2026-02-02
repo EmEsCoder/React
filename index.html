@@ -7,22 +7,41 @@
   </head>
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <body>
     <div id="root"></div>
 
-    <script>
+    <script type="text/babel">
       function Addh1() {
-        return React.createElement(
-          "div",
-          null,
-          React.createElement("h1", null, "bahabah"),
+        return (
+          <>
+            <p>salam</p>
+            <h1>bahbah</h1>
+          </>
         );
       }
 
       function Add() {
-        return React.createElement("p", null,
-        React.createElement(Addh1),
-        'slm');
+        const name = "majid";
+        let member = true;
+        const list = ["ali", "navid", "liam"];
+        // if (member) {
+        //   return <p>hi</p>;
+        // } else {
+        //   return <p>Join Us!</p>;
+        // }
+        return (
+          <p>
+            <Addh1 />
+            <ul>
+              {list.map((evo) => (
+                <li>{evo}</li>
+              ))}
+            </ul>
+            {member ? <p>hi</p> : <p>Join Us!</p>}
+            name is {name}
+          </p>
+        );
       }
 
       const container = document.getElementById("root");
