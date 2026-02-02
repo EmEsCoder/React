@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      function Addh1() {
+        return React.createElement(
+          "div",
+          null,
+          React.createElement("h1", null, "bahabah"),
+        );
+      }
+
+      function Add() {
+        return React.createElement("p", null,
+        React.createElement(Addh1),
+        'slm');
+      }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(React.createElement(Add));
+    </script>
+  </body>
+</html>
