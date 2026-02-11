@@ -2,51 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>react-vite-project</title>
   </head>
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <body>
     <div id="root"></div>
-
-    <script type="text/babel">
-      function Addh1() {
-        return (
-          <>
-            <p>salam</p>
-            <h1>bahbah</h1>
-          </>
-        );
-      }
-
-      function Add() {
-        const name = "majid";
-        let member = true;
-        const list = ["ali", "navid", "liam"];
-        // if (member) {
-        //   return <p>hi</p>;
-        // } else {
-        //   return <p>Join Us!</p>;
-        // }
-        return (
-          <p>
-            <Addh1 />
-            <ul>
-              {list.map((evo) => (
-                <li>{evo}</li>
-              ))}
-            </ul>
-            {member ? <p>hi</p> : <p>Join Us!</p>}
-            name is {name}
-          </p>
-        );
-      }
-
-      const container = document.getElementById("root");
-      const root = ReactDOM.createRoot(container);
-      root.render(React.createElement(Add));
-    </script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
