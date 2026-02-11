@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.fs-5 {
+    font-size: 5rem;
+}
