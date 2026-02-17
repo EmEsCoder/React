@@ -1,31 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function sample() {
-  const [members, setMembers] = useState(["mamad", "taqi", "hosein"]);
-  let [newMember,setNewMember] = useState('');
-//   console.log(newMember);
+  const [members, setMembers] = useState('');
+  const [count,setCount] = useState(0)
   
-
+    useEffect(()=> {
+        console.log("ejra bad code jsx");
+        
+    },[count])
   return (
     <>
-      <input
-        type="text"
-        className="bg-red-300"
-        onChange={(e) => {
-            setNewMember(e.target.value)
-            
-        }}
-      />
-      <button className="bg-blue-400" onClick={()=> {setMembers([...members,newMember])}}>ADD TO LIST</button>
-      <ul>
-        {members.map((evo) => {
-          return (
-            <li className="ml-5" key={evo}>
-              {evo}
-            </li>
-          );
-        })}
-      </ul>
+        <button className="bg-red-200" onClick={()=>setCount(count + 1)}>Count : {count}</button>
+        <br /><br />
+        <input type="text"  className="bg-red-200" onChange={(e)=> setMembers(e.target.value)} />
+        <p>{members}</p>
     </>
   );
 }
