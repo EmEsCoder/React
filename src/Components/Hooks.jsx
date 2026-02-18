@@ -1,21 +1,31 @@
 import { useEffect, useState } from "react";
 
 function sample() {
-  const [members, setMembers] = useState('');
-  const [count,setCount] = useState(0)
-  
-    useEffect(()=> {
-        console.log("ejra bad code jsx");
-        
-    },[count])
+  const [size, setSize] = useState(window.innerWidth);
+
+  const checkSize = () => {
+    setSize(window.innerWidth);
+  };
+
+  useEffect(() => {
+    console.log("useeffect");
+
+    window.addEventListener("resize", checkSize);
+
+    return () => {
+      console.log("cleanup");
+
+      window.removeEventListener("resize", checkSize);
+    };
+  },[]);
+
   return (
     <>
-        <button className="bg-red-200" onClick={()=>setCount(count + 1)}>Count : {count}</button>
-        <br /><br />
-        <input type="text"  className="bg-red-200" onChange={(e)=> setMembers(e.target.value)} />
-        <p>{members}</p>
+      <h1>react.js - webprog.io</h1>
+      <h2>window: {size} px</h2>
     </>
   );
+
 }
 
 export default sample;
