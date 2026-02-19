@@ -9,7 +9,7 @@ function sample() {
     try {
       const nem = await fetch("https://jsonplaceholder.typicode.com/posts");
       if (!nem.ok) {
-        throw new Error("riiiiidiiiii");
+        throw new Error("ErroR");
       } else {
         const mem = await nem.json();
         setPosts(mem);
