@@ -10,7 +10,7 @@ import { use } from "react";
 // );
 
 async function getPost() {
-   const met =   await fetch("https://jsonplaceholder.typicode.com/posts/sagh");
+   const met =   await fetch("https://jsonplaceholder.typicode.com/posts/");
    return met.json()
 }
 
