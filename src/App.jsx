@@ -5,22 +5,24 @@ import { Suspense } from "react";
 import ErrorBoundary from "./ErrorBoundary.jsx";
 import CompA from "./Components/CompA.jsx";
 import UserContext from "./Context/UserContext.jsx";
+import Counter from "./Components/Counter.jsx";
 
 function App() {
   return (
     <>
       {/* <Form /> */}
       {/* <Sample /> */}
-      
+
       {/* <ErrorBoundary>
         <Suspense fallback={<p>loading ....</p>}>
           <PostLists />
         </Suspense>
       </ErrorBoundary> */}
 
-      <UserContext.Provider value={'meti'}>
+      {/* <UserContext.Provider value={'meti'}>
         <CompA />
-      </UserContext.Provider>
+      </UserContext.Provider> */}
+      <Counter />
     </>
   );
 }
