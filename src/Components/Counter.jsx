@@ -1,51 +1,26 @@
 import { useReducer, useState } from "react";
-const initialState = 0;
+const initialState = {
+    name : '',
+    count : 0
+};
 const reducer = (state, action) => {
-  if (action === 'plus') {
-    return state + 1;
+  if (action.type === 'plus') {
+    return {...state, count:state.count + action.payload};
   } else if (action === 'manfi') {
-    return state - 1;
+    return {...state, count:state.count - 1};
   } else{
     throw new Error('NaSHod')
   }
 };
 function Counter() {
-    const [Count,dispath] = useReducer(reducer,initialState)
-//   const [Count, setCount] = useState(0);
+    const [state,dispath] = useReducer(reducer,initialState)
   return (
     <>
-      <h2>{Count}</h2>
-      {/* <div className="flex gap-2">
-        <button
-          onClick={() => {
-            setCount(Count + 1);
-          }}
-          className="bg-green-300"
-        >
-          {" "}
-          + 1
-        </button>
-        <button
-          onClick={() => {
-            setCount(Count - 1);
-          }}
-          className="bg-green-300"
-        >
-          {" "}
-          - 1
-        </button>
-        <button
-          onClick={() => {
-            setCount(0);
-          }}
-          className="bg-green-300"
-        >
-          {" "}
-          default
-        </button>
-      </div> */}
-      <button onClick={()=> {dispath('plus')}} className="bg-green-400">+1</button>
-      <button onClick={()=> {dispath('manfi')}} className="bg-green-800">-1</button>
+      <h2>{state.count}</h2>
+        {/* <button onClick={()=>{dispath('plus')}} className="bg-green-400">+1</button>
+        <button onClick={()=>{dispath('manfi')}} className="bg-green-800">-1</button> */}
+        <button onClick={()=>{dispath({type : 'plus',payload:5})}} className="bg-green-400">+</button>
+        <button onClick={()=>{dispath('manfi')}} className="bg-green-800">-1</button>
     </>
   );
 }
